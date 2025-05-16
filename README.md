@@ -8,8 +8,8 @@ Nanobodies are artificial antibodies derived from the immune systems of camelid 
 **Clone the repo**
 
 ```
-git clone https://github.com/Wo-oh-oh-ooh-oh/Nanotope
-cd Nanotope
+[git clone https://github.com/Wo-oh-oh-ooh-oh/Nanotope](https://github.com/moppppp/Analysis-and-evaluation-of-GNN-algorithms-on-multiple-antibody-binding-site-datasets)
+
 ```
 
 **Create a virtual env**
