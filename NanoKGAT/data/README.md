@@ -1,81 +1,26 @@
-# Graph External Attention Enhanced Transformer
+# NanoKGAT
+**Analysis-and-evaluation-of-GNN-algorithms-on-multiple-antibody-binding-site-datasets**
 
+Nanobodies are artificial antibodies derived from the immune systems of camelid animals, obtained through artificial processing and isolation of antigen-binding proteins. Their small molecular size and high specificity endow nanobodies with broad potential applications across various fields. However, determining the paratope (antigen-binding region) of nanobodies through experimental methods is both expensive and time-consuming, and traditional computational methods often lack sufficient accuracy. To improve prediction accuracy, we propose NanoKGAT, a method that employs Graph Neural Networks (GNN) and the antibody pre-trained language model AntiBERTy to fully leverage the sequence and three-dimensional structural information of nanobodies.These features capture the complex dependencies between amino acid residues. 
 
+# Install
 
-[Proceedings of the 41st International Conference on Machine Learning, PMLR 235:29560-29574, 2024.](https://proceedings.mlr.press/v235/liang24a.html)
+**Clone the repo**
 
-
-
-
-GEAET architecture:
-
-![GraphGPS-viz](GEAET.png)
-
-Transformer vs GEANet:
-
-![GraphGPS-viz](self_external.png)
-
-> The code implementation is based on [GraphGPS (Rampasek et al., 2022)](https://github.com/rampasek/GraphGPS).
-
-### Python environment setup
-
-```bash
-conda create -n GEAET python=3.10
-conda activate GEAET
-
-conda install pytorch=1.13 torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
-conda install pyg=2.2 -c pyg -c conda-forge
-pip install pyg-lib -f https://data.pyg.org/whl/torch-1.13.0+cu117.html
-
-# RDKit is required for OGB-LSC PCQM4Mv2 and datasets derived from it.  
-conda install openbabel fsspec rdkit -c conda-forge
-
-pip install pytorch-lightning yacs torchmetrics
-pip install performer-pytorch
-pip install tensorboardX
-pip install ogb
-pip install wandb
-
-conda clean --all
 ```
-
-
-### Running GEAET on Different Datasets
-```bash
-conda activate GEAET
-
-# Running GEAET on CIFAR10
-python main.py --cfg configs/GEAET/CIFAR10.yaml  wandb.use False accelerator "cuda:0"
-
-# Running GEAET on MNIST
-python main.py --cfg configs/GEAET/mnist.yaml  wandb.use False accelerator "cuda:0"
-
-# Running GEAET on PATTERN
-python main.py --cfg configs/GEAET/pattern.yaml  wandb.use False accelerator "cuda:0"
-
-# Running GEAET on peptides-struct
-python main.py --cfg configs/GEAET/peptides-struct.yaml  wandb.use False accelerator "cuda:0"
-
-# Running GEAET on PyG-VOCSuperpixels
-python main.py --cfg configs/GEAET/vocsp.yaml  wandb.use False accelerator "cuda:0"
-
-# Running GEAET on PyG-COCOSuperpixels
-python main.py --cfg configs/GEAET/coco.yaml  wandb.use False accelerator "cuda:0" 
-
-# replace 'cuda:0' with the device to use
-# The above datasets will be downloaded automatically when running the code.
+git clone https://github.com/moppppp/Analysis-and-evaluation-of-GNN-algorithms-on-multiple-antibody-binding-site-datasets
 
 ```
 
+**Create a virtual env**
 
-## Citation
-
-If you find this work useful, please cite our ICML 2024 paper:
-```bibtex
-@inproceedings{liang2024graph,
-  title={Graph External Attention Enhanced Transformer},
-  author={Jianqing Liang and Min Chen and Jiye Liang},
-  booktitle={International Conference on Machine Learning},
-  year={2024},
-}
 ```
+conda create --name Nanotope python=3.9
+```
+
+**install**
+
+```
+pip install .
+```
+
